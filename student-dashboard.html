@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Dashboard | Vivian's Tutoring Service</title>
+    <meta
+      name="description"
+      content="Student dashboard showing bookings, session progress, and tutor history."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrapper">
+        <a href="index.html" class="brand" aria-label="Vivian's Tutoring Service home">
+          <span class="brand-mark">V</span>
+          <span class="brand-text">
+            <strong>Vivian's</strong>
+            <small>Tutoring Service</small>
+          </span>
+        </a>
+
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="tutors.html">Find a Tutor</a>
+          <a href="booking.html">Book a Session</a>
+          <a href="contact.html">Contact</a>
+          <a href="login.html" class="nav-cta">Login</a>
+          <a href="register.html" class="nav-cta nav-cta-primary">Register</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero dashboard-hero">
+        <div class="container page-hero-inner">
+          <div>
+            <span class="eyebrow">Student dashboard</span>
+            <h1>Welcome back, learner.</h1>
+            <p>Track your bookings, upcoming sessions, and academic progress in one place.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="dashboard-section">
+        <div class="container dashboard-layout">
+          <aside class="dashboard-sidebar">
+            <div class="sidebar-card">
+              <h3>Student overview</h3>
+              <div class="mini-stat-wrap">
+                <div class="mini-panel">
+                  <strong id="bookingCount">0</strong>
+                  <span>Bookings</span>
+                </div>
+                <div class="mini-panel">
+                  <strong id="upcomingCount">0</strong>
+                  <span>Upcoming</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="sidebar-card">
+              <h3>Quick actions</h3>
+              <div class="quick-links">
+                <a href="tutors.html" class="btn btn-secondary">Find another tutor</a>
+                <a href="booking.html" class="btn btn-primary">Book a session</a>
+              </div>
+            </div>
+          </aside>
+
+          <div class="dashboard-main">
+            <div class="content-card">
+              <div class="section-head small-head">
+                <h2>Upcoming sessions</h2>
+              </div>
+              <div id="upcomingSessions" class="booking-list"></div>
+            </div>
+
+            <div class="content-card">
+              <div class="section-head small-head">
+                <h2>Session history</h2>
+              </div>
+              <div id="bookingHistory" class="booking-list"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <a href="index.html" class="brand footer-brand" aria-label="Vivian's Tutoring Service home">
+            <span class="brand-mark">V</span>
+            <span class="brand-text">
+              <strong>Vivian's</strong>
+              <small>Tutoring Service</small>
+            </span>
+          </a>
+          <p>Helping learners build confidence, improve performance, and enjoy the learning process through Cambridge-aligned academic support.</p>
+        </div>
+
+        <div>
+          <h3>Quick links</h3>
+          <ul>
+            <li><a href="tutors.html">Find a tutor</a></li>
+            <li><a href="booking.html">Book a session</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Contact</h3>
+          <ul>
+            <li><a href="mailto:viviansb3@gmail.com">viviansb3@gmail.com</a></li>
+            <li><a href="tel:+27621615889">+27 62 161 5889</a></li>
+            <li>Bloemfontein, South Africa</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p>© <span id="current-year"></span> Vivian's Tutoring Service. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/dashboard.js"></script>
+  </body>
+</html>

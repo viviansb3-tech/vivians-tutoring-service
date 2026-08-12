@@ -1,0 +1,26 @@
+@media (max-width: 1200px) {
+  .container {
+    width: min(var(--container), calc(100% - 1.5rem));
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-copy h1 {
+    font-size: 2.5rem;
+  }
+
+  .section-head h2 {
+    font-size: 1.9rem;
+  }
+
+  .partners-inner,
+  .mini-card,
+  .schedule-card {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .brand-text small {
+    display: none;
+  }
+}

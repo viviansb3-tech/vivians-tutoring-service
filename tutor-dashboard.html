@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tutor Dashboard | Vivian's Tutoring Service</title>
+    <meta
+      name="description"
+      content="Tutor dashboard with bookings, schedule overview, and availability management."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrapper">
+        <a href="index.html" class="brand" aria-label="Vivian's Tutoring Service home">
+          <span class="brand-mark">V</span>
+          <span class="brand-text">
+            <strong>Vivian's</strong>
+            <small>Tutoring Service</small>
+          </span>
+        </a>
+
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="tutors.html">Find a Tutor</a>
+          <a href="booking.html">Book a Session</a>
+          <a href="student-dashboard.html">Student Dashboard</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero dashboard-hero">
+        <div class="container page-hero-inner">
+          <div>
+            <span class="eyebrow">Tutor dashboard</span>
+            <h1>Manage sessions and schedule</h1>
+            <p>Stay on top of bookings, lesson plans, and your weekly teaching availability.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="dashboard-section">
+        <div class="container teacher-layout">
+          <aside class="teacher-sidebar">
+            <div class="sidebar-card">
+              <h3>Overview</h3>
+              <div class="stat-grid">
+                <div class="metric-card">
+                  <span>Sessions</span>
+                  <strong id="sessionTotal">0</strong>
+                </div>
+                <div class="metric-card">
+                  <span>Students</span>
+                  <strong id="studentTotal">0</strong>
+                </div>
+                <div class="metric-card">
+                  <span>Hours</span>
+                  <strong id="hoursTotal">0</strong>
+                </div>
+                <div class="metric-card">
+                  <span>Rating</span>
+                  <strong id="ratingTotal">0.0</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="sidebar-card">
+              <h3>Quick tools</h3>
+              <div class="quick-links">
+                <button type="button" class="btn btn-primary" id="saveScheduleBtn">Save availability</button>
+                <a href="booking.html" class="btn btn-secondary">View booking page</a>
+              </div>
+            </div>
+          </aside>
+
+          <div class="teacher-main">
+            <div class="content-card">
+              <div class="section-head small-head">
+                <h2>Upcoming bookings</h2>
+              </div>
+              <div id="upcomingBookings" class="booking-list"></div>
+            </div>
+
+            <div class="content-card">
+              <div class="section-head small-head">
+                <h2>Weekly availability</h2>
+              </div>
+              <div id="availabilityGrid" class="availability-grid" aria-live="polite"></div>
+            </div>
+
+            <div class="content-card">
+              <div class="section-head small-head">
+                <h2>Recent feedback</h2>
+              </div>
+              <div id="feedbackList" class="feedback-list"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <a href="index.html" class="brand footer-brand" aria-label="Vivian's Tutoring Service home">
+            <span class="brand-mark">V</span>
+            <span class="brand-text">
+              <strong>Vivian's</strong>
+              <small>Tutoring Service</small>
+            </span>
+          </a>
+          <p>Helping learners build confidence, improve performance, and enjoy the learning process through Cambridge-aligned academic support.</p>
+        </div>
+
+        <div>
+          <h3>Quick links</h3>
+          <ul>
+            <li><a href="tutors.html">Find a tutor</a></li>
+            <li><a href="student-dashboard.html">Student dashboard</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Contact</h3>
+          <ul>
+            <li><a href="mailto:viviansb3@gmail.com">viviansb3@gmail.com</a></li>
+            <li><a href="tel:+27621615889">+27 62 161 5889</a></li>
+            <li>Bloemfontein, South Africa</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p>© <span id="current-year"></span> Vivian's Tutoring Service. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/tutor-dashboard.js"></script>
+  </body>
+</html>

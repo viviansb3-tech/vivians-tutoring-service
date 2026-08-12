@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book a Session | Vivian's Tutoring Service</title>
+    <meta
+      name="description"
+      content="Book a tutoring session by selecting topic, grade, tutor, date, and lesson mode."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/booking.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrapper">
+        <a href="index.html" class="brand" aria-label="Vivian's Tutoring Service home">
+          <span class="brand-mark">V</span>
+          <span class="brand-text">
+            <strong>Vivian's</strong>
+            <small>Tutoring Service</small>
+          </span>
+        </a>
+
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="tutors.html">Find a Tutor</a>
+          <a href="booking.html">Book a Session</a>
+          <a href="contact.html">Contact</a>
+          <a href="login.html" class="nav-cta">Login</a>
+          <a href="register.html" class="nav-cta nav-cta-primary">Register</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero booking-hero">
+        <div class="container page-hero-inner">
+          <div>
+            <span class="eyebrow">Booking form</span>
+            <h1>Confirm your tutoring session</h1>
+            <p>Complete the booking details and secure your preferred time slot with Vivian's Tutoring Service.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="booking-form-section">
+        <div class="container booking-form-layout">
+          <form id="bookingForm" class="booking-form-card">
+            <div class="field-group">
+              <label for="subjectSelect">Subject</label>
+              <select id="subjectSelect" required>
+                <option value="">Select subject</option>
+                <option value="Mathematics">Mathematics</option>
+                <option value="Physics">Physics</option>
+                <option value="Chemistry">Chemistry</option>
+                <option value="Biology">Biology</option>
+                <option value="English">English</option>
+                <option value="Statistics">Statistics</option>
+                <option value="Economics">Economics</option>
+                <option value="Computer Science">Computer Science</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label for="gradeSelect">Grade</label>
+              <select id="gradeSelect" required>
+                <option value="">Select grade</option>
+                <option value="Grade 8">Grade 8</option>
+                <option value="Grade 9">Grade 9</option>
+                <option value="Grade 10">Grade 10</option>
+                <option value="Grade 11">Grade 11</option>
+                <option value="Grade 12">Grade 12</option>
+                <option value="IGCSE">IGCSE</option>
+                <option value="A Level">A Level</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label for="modeSelect">Mode</label>
+              <select id="modeSelect" required>
+                <option value="">Select lesson mode</option>
+                <option value="Online">Online</option>
+                <option value="In-person">In-person</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label for="studentName">Student name</label>
+              <input id="studentName" type="text" placeholder="Enter full name" required />
+            </div>
+
+            <div class="field-group">
+              <label for="studentEmail">Student email</label>
+              <input id="studentEmail" type="email" placeholder="Enter email" required />
+            </div>
+
+            <div class="field-group">
+              <label for="notes">Session notes</label>
+              <textarea id="notes" rows="4" placeholder="Share your goals or focus area"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary booking-submit">Confirm booking</button>
+          </form>
+
+          <aside id="bookingConfirmationPanel" class="summary-panel highlighted-panel" aria-live="polite"></aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <a href="index.html" class="brand footer-brand" aria-label="Vivian's Tutoring Service home">
+            <span class="brand-mark">V</span>
+            <span class="brand-text">
+              <strong>Vivian's</strong>
+              <small>Tutoring Service</small>
+            </span>
+          </a>
+          <p>Helping learners build confidence, improve performance, and enjoy the learning process through Cambridge-aligned academic support.</p>
+        </div>
+
+        <div>
+          <h3>Quick links</h3>
+          <ul>
+            <li><a href="tutors.html">Find a tutor</a></li>
+            <li><a href="booking.html">Book a session</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Contact</h3>
+          <ul>
+            <li><a href="mailto:viviansb3@gmail.com">viviansb3@gmail.com</a></li>
+            <li><a href="tel:+27621615889">+27 62 161 5889</a></li>
+            <li>Bloemfontein, South Africa</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p>© <span id="current-year"></span> Vivian's Tutoring Service. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/booking.js"></script>
+  </body>
+</html>

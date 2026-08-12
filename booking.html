@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking Availability | Vivian's Tutoring Service</title>
+    <meta
+      name="description"
+      content="Check tutor availability, choose an available date, and review available lesson times."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/booking.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrapper">
+        <a href="index.html" class="brand" aria-label="Vivian's Tutoring Service home">
+          <span class="brand-mark">V</span>
+          <span class="brand-text">
+            <strong>Vivian's</strong>
+            <small>Tutoring Service</small>
+          </span>
+        </a>
+
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="tutors.html">Find a Tutor</a>
+          <a href="booking.html">Book a Session</a>
+          <a href="contact.html">Contact</a>
+          <a href="login.html" class="nav-cta">Login</a>
+          <a href="register.html" class="nav-cta nav-cta-primary">Register</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero booking-hero">
+        <div class="container page-hero-inner">
+          <div>
+            <span class="eyebrow">Availability system</span>
+            <h1>Check tutor availability</h1>
+            <p>Choose a tutor, view upcoming dates, and review available lesson slots before booking.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="availability-page">
+        <div class="container availability-layout">
+          <div class="availability-panel">
+            <div class="form-card">
+              <label for="tutorSelect">Select tutor</label>
+              <select id="tutorSelect"></select>
+            </div>
+
+            <div class="legend-row" aria-label="Availability legend">
+              <span class="legend-item"> <i class="legend-dot available"></i> Available </span>
+              <span class="legend-item"> <i class="legend-dot limited"></i> Limited </span>
+              <span class="legend-item"> <i class="legend-dot unavailable"></i> Unavailable </span>
+            </div>
+
+            <div class="calendar-card">
+              <div class="section-title-row">
+                <h2>Choose a date</h2>
+              </div>
+              <div id="calendarGrid" class="calendar-grid"></div>
+            </div>
+
+            <div class="time-card">
+              <div class="section-title-row">
+                <h2>Available time slots</h2>
+              </div>
+              <div id="timeSlotGrid" class="time-slot-grid"></div>
+            </div>
+          </div>
+
+          <aside id="bookingSummary" class="summary-panel" aria-live="polite"></aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <a href="index.html" class="brand footer-brand" aria-label="Vivian's Tutoring Service home">
+            <span class="brand-mark">V</span>
+            <span class="brand-text">
+              <strong>Vivian's</strong>
+              <small>Tutoring Service</small>
+            </span>
+          </a>
+          <p>Helping learners build confidence, improve performance, and enjoy the learning process through Cambridge-aligned academic support.</p>
+        </div>
+
+        <div>
+          <h3>Quick links</h3>
+          <ul>
+            <li><a href="tutors.html">Find a tutor</a></li>
+            <li><a href="booking.html">Book a session</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Contact</h3>
+          <ul>
+            <li><a href="mailto:viviansb3@gmail.com">viviansb3@gmail.com</a></li>
+            <li><a href="tel:+27621615889">+27 62 161 5889</a></li>
+            <li>Bloemfontein, South Africa</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p>© <span id="current-year"></span> Vivian's Tutoring Service. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/availability.js"></script>
+  </body>
+</html>

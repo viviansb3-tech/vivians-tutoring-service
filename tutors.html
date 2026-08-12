@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find a Tutor | Vivian's Tutoring Service</title>
+    <meta
+      name="description"
+      content="Browse experienced Cambridge-aligned tutors in Bloemfontein, South Africa. Filter by subject, grade, and availability."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrapper">
+        <a href="index.html" class="brand" aria-label="Vivian's Tutoring Service home">
+          <span class="brand-mark">V</span>
+          <span class="brand-text">
+            <strong>Vivian's</strong>
+            <small>Tutoring Service</small>
+          </span>
+        </a>
+
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="tutors.html">Find a Tutor</a>
+          <a href="booking.html">Book a Session</a>
+          <a href="contact.html">Contact</a>
+          <a href="login.html" class="nav-cta">Login</a>
+          <a href="register.html" class="nav-cta nav-cta-primary">Register</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero tutors-page-hero">
+        <div class="container page-hero-inner">
+          <div>
+            <span class="eyebrow">Find the right tutor</span>
+            <h1>Expert support for every subject, stage, and goal.</h1>
+            <p>
+              Explore qualified tutors in Bloemfontein who offer Cambridge-aligned lessons,
+              exam preparation, and focused academic guidance.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="filter-section">
+        <div class="container filter-wrap">
+          <div class="search-field">
+            <label for="searchTutor">Search tutors</label>
+            <input id="searchTutor" type="text" placeholder="Search by tutor or subject" />
+          </div>
+
+          <div class="search-field">
+            <label for="subjectFilter">Subject</label>
+            <select id="subjectFilter">
+              <option value="all">All subjects</option>
+              <option value="Mathematics">Mathematics</option>
+              <option value="Physics">Physics</option>
+              <option value="Chemistry">Chemistry</option>
+              <option value="Biology">Biology</option>
+              <option value="English">English</option>
+              <option value="Statistics">Statistics</option>
+            </select>
+          </div>
+
+          <div class="search-field">
+            <label for="levelFilter">Level</label>
+            <select id="levelFilter">
+              <option value="all">All levels</option>
+              <option value="IGCSE">IGCSE</option>
+              <option value="A Level">A Level</option>
+              <option value="Grade 8-12">Grade 8-12</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <section class="directory-section">
+        <div class="container">
+          <div class="directory-header">
+            <div>
+              <span class="section-kicker">Tutor directory</span>
+              <h2>Available tutors</h2>
+            </div>
+            <p id="resultsCount">Loading tutors...</p>
+          </div>
+
+          <div id="tutorDirectoryGrid" class="tutor-grid directory-grid" aria-live="polite"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <a href="index.html" class="brand footer-brand" aria-label="Vivian's Tutoring Service home">
+            <span class="brand-mark">V</span>
+            <span class="brand-text">
+              <strong>Vivian's</strong>
+              <small>Tutoring Service</small>
+            </span>
+          </a>
+          <p>Helping learners build confidence, improve performance, and enjoy the learning process through Cambridge-aligned academic support.</p>
+        </div>
+
+        <div>
+          <h3>Quick links</h3>
+          <ul>
+            <li><a href="tutors.html">Find a tutor</a></li>
+            <li><a href="booking.html">Book a session</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Contact</h3>
+          <ul>
+            <li><a href="mailto:viviansb3@gmail.com">viviansb3@gmail.com</a></li>
+            <li><a href="tel:+27621615889">+27 62 161 5889</a></li>
+            <li>Bloemfontein, South Africa</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p>© <span id="current-year"></span> Vivian's Tutoring Service. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/tutors.js"></script>
+  </body>
+</html>
