@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: vivian-sibanda-tutoring
+    env: node
+    plan: free
+    region: oregon
+    branch: main
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: ADMIN_EMAIL
+        value: viviansb3@gmail.com
+      - key: ADMIN_NAME
+        value: Vivian Sibanda
+      - key: DATABASE_PATH
+        value: ./data/tutoring.db

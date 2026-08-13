@@ -1,68 +1,49 @@
-# Vivian's Tutoring Service
+# Vivian Sibanda Tutoring Management Platform
 
-This is a static multi-page tutoring website for Vivian's Tutoring Service.
+This project is a responsive full-stack tutoring management system designed for Vivian Sibanda and includes:
+
+- Public website and booking flow
+- Student, tutor, and super-admin roles
+- SQLite-backed database with role-aware access control
+- Dashboard views for different user roles
+- Assessment and progress recording
+- Message and notification basics
+- Secure session-based authentication
 
 ## Project structure
 
-- `index.html` — homepage
-- `tutors.html` — tutor directory
-- `tutor-profile.html` — profile detail page
-- `booking.html` — availability page
-- `booking-form.html` — booking form
-- `student-dashboard.html` — student dashboard
-- `tutor-dashboard.html` — tutor dashboard
-- `login.html` — login form
-- `register.html` — registration form
-- `contact.html` — contact page
-- `css/` — stylesheets
-- `js/` — JavaScript logic
+- `server.js` – main Express application
+- `db.js` – database creation and schema setup
+- `views/` – EJS templates for homepage, dashboards, booking, and auth pages
+- `public/` – CSS and JavaScript assets
+- `data/` – SQLite database files
+- `.env.example` – environment configuration template
 
-## How to edit the website
+## Local setup
 
-1. Open the project in VS Code.
-2. Edit any HTML, CSS, or JS file in this folder.
-3. Save your changes.
-4. Open the page in a browser to preview it.
+1. Install Node.js 18+ on your machine.
+2. From this folder, run:
 
-## How to publish online
+```bash
+npm install
+cp .env.example .env
+```
 
-### Option 1: GitHub + Netlify (recommended)
+3. Update the values in `.env` before starting the app.
+4. Start the development server:
 
-1. Create a GitHub repository.
-2. Upload this folder to the repository.
-3. Go to Netlify and import the repository.
-4. Keep the publish directory as the project root.
-5. Deploy.
-6. Your site will go live automatically on future pushes.
+```bash
+npm run dev
+```
 
-### Option 2: GitHub Pages
+5. Open http://localhost:3000
 
-If you want a simple free deployment:
+## Demo access
 
-1. Push this folder to GitHub.
-2. In the repo settings, enable GitHub Pages.
-3. Choose the main branch as the source.
+- Admin: `viviansb3@gmail.com` / `ChangeMe123!`
+- Tutor: `tutor@example.com` / `Tutor123!`
+- Student: `student@example.com` / `Student123!`
 
-## Demo login credentials
+## Notes
 
-The demo auth flow is included in the site and seeds these users automatically:
-
-- Student: student@example.com / password123
-- Tutor: tutor@example.com / password123
-
-## Business contact details
-
-- Phone: +27 62 161 5889
-- Email: viviansb3@gmail.com
-- Location: Bloemfontein, South Africa
-
-## Maintenance tips
-
-- Update text in the HTML files.
-- Update styles in the CSS files under `css/`.
-- Update logic in the JS files under `js/`.
-- Keep the site static unless you are ready to add a real backend.
-
-## If you want to keep working with me
-
-Share the GitHub repository link after you create it and I can continue editing the live project with you.
+This version is structured as a real backend application, but the environment in this workspace does not currently have Node/NPM available, so I could not run the app here. The code is prepared for local deployment once Node is installed.

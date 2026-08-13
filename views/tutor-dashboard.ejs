@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tutor Dashboard | Vivian Sibanda Tutoring</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <div class="dashboard-shell">
+    <aside class="sidebar">
+      <div class="brand sidebar-brand">
+        <div class="brand-mark">VS</div>
+        <div>
+          <strong>Vivian Sibanda</strong>
+          <small>Tutor Portal</small>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="/tutor-dashboard">Dashboard</a>
+        <a href="/tutor-dashboard">Students</a>
+        <a href="/tutor-dashboard">Grades</a>
+        <a href="/tutor-dashboard">Messages</a>
+        <a href="/logout">Logout</a>
+      </nav>
+    </aside>
+
+    <main class="dashboard-main">
+      <header class="dashboard-header">
+        <div>
+          <p class="eyebrow">Welcome,</p>
+          <h1><%= tutor ? tutor.name : 'Tutor' %></h1>
+        </div>
+      </header>
+
+      <section class="stats-grid">
+        <article class="stat-card blue">
+          <span>Students</span>
+          <strong><%= students ? students.length : 0 %></strong>
+        </article>
+        <article class="stat-card green">
+          <span>Lessons This Week</span>
+          <strong>18</strong>
+        </article>
+        <article class="stat-card amber">
+          <span>Average Improvement</span>
+          <strong>12%</strong>
+        </article>
+        <article class="stat-card red">
+          <span>Upcoming Lessons</span>
+          <strong><%= bookings ? bookings.length : 0 %></strong>
+        </article>
+      </section>
+
+      <section class="panel-grid">
+        <div class="panel">
+          <div class="panel-header">
+            <h2>Assigned Students</h2>
+          </div>
+          <% if (students && students.length) { %>
+            <ul class="listing">
+              <% students.forEach((student) => { %>
+                <li><span><%= student.name %></span> <strong><%= student.grade %></strong></li>
+              <% }) %>
+            </ul>
+          <% } else { %>
+            <p>No assigned students.</p>
+          <% } %>
+        </div>
+
+        <div class="panel">
+          <div class="panel-header">
+            <h2>Recent assessments</h2>
+          </div>
+          <% if (assessments && assessments.length) { %>
+            <ul class="listing">
+              <% assessments.forEach((assessment) => { %>
+                <li><span><%= assessment.assessment_name %></span> <strong><%= assessment.grade %></strong></li>
+              <% }) %>
+            </ul>
+          <% } else { %>
+            <p>No assessments entered yet.</p>
+          <% } %>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Vivian Sibanda Tutoring</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body class="auth-page">
+  <div class="auth-shell">
+    <div class="auth-card">
+      <div class="auth-header">
+        <div class="brand">
+          <div class="brand-mark">VS</div>
+          <div>
+            <strong>Vivian Sibanda</strong>
+            <small>Contact</small>
+          </div>
+        </div>
+        <h1>Get in touch</h1>
+      </div>
+      <form id="contactForm" class="auth-form">
+        <div class="field-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="field-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="field-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button class="btn btn-primary full-width" type="submit">Send message</button>
+        <p id="contactMessage" class="form-message"></p>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const contactForm = document.getElementById('contactForm');
+    const contactMessage = document.getElementById('contactMessage');
+    contactForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const payload = Object.fromEntries(new FormData(contactForm).entries());
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      const result = await response.json();
+      contactMessage.textContent = result.message || result.error || 'Thank you.';
+      contactMessage.className = `form-message ${response.ok ? 'success' : 'error'}`;
+      if (response.ok) contactForm.reset();
+    });
+  </script>
+</body>
+</html>

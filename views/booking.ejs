@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Session | Vivian Sibanda Tutoring</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body class="auth-page">
+  <div class="auth-shell">
+    <div class="auth-card">
+      <div class="auth-header">
+        <div class="brand">
+          <div class="brand-mark">VS</div>
+          <div>
+            <strong>Vivian Sibanda</strong>
+            <small>Booking</small>
+          </div>
+        </div>
+        <h1>Book <%= tutor.name %></h1>
+      </div>
+
+      <form id="bookingForm" class="auth-form">
+        <div class="field-group">
+          <label for="subject">Subject</label>
+          <input id="subject" name="subject" value="Mathematics" required />
+        </div>
+        <div class="field-group">
+          <label for="bookingDate">Date</label>
+          <input type="date" id="bookingDate" name="bookingDate" required />
+        </div>
+        <div class="field-group">
+          <label for="bookingTime">Time</label>
+          <input type="time" id="bookingTime" name="bookingTime" required />
+        </div>
+        <input type="hidden" name="tutorId" value="<%= tutor.id %>" />
+        <button class="btn btn-primary full-width" type="submit">Submit Booking</button>
+        <p id="bookingMessage" class="form-message"></p>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const bookingForm = document.getElementById('bookingForm');
+    const bookingMessage = document.getElementById('bookingMessage');
+    bookingForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const payload = Object.fromEntries(new FormData(bookingForm).entries());
+      try {
+        const response = await fetch('/api/bookings', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const result = await response.json();
+        if (!response.ok) {
+          bookingMessage.textContent = result.error || 'Booking failed.';
+          bookingMessage.className = 'form-message error';
+          return;
+        }
+        bookingMessage.textContent = result.message || 'Booking created successfully.';
+        bookingMessage.className = 'form-message success';
+        setTimeout(() => window.location.href = '/student-dashboard', 1000);
+      } catch (error) {
+        bookingMessage.textContent = 'Unable to book at the moment.';
+        bookingMessage.className = 'form-message error';
+      }
+    });
+  </script>
+</body>
+</html>

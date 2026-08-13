@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Dashboard | Vivian Sibanda Tutoring</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <div class="dashboard-shell">
+    <aside class="sidebar">
+      <div class="brand sidebar-brand">
+        <div class="brand-mark">VS</div>
+        <div>
+          <strong>Vivian Sibanda</strong>
+          <small>Student Portal</small>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="/student-dashboard">Overview</a>
+        <a href="/student-dashboard">Progress</a>
+        <a href="/student-dashboard">Homework</a>
+        <a href="/student-dashboard">Messages</a>
+        <a href="/logout">Logout</a>
+      </nav>
+    </aside>
+
+    <main class="dashboard-main">
+      <header class="dashboard-header">
+        <div>
+          <p class="eyebrow">Welcome,</p>
+          <h1><%= user ? user.name : 'Student' %></h1>
+        </div>
+      </header>
+
+      <section class="stats-grid">
+        <article class="stat-card blue">
+          <span>Current Average</span>
+          <strong>74%</strong>
+        </article>
+        <article class="stat-card green">
+          <span>Assessments</span>
+          <strong><%= assessments ? assessments.length : 0 %></strong>
+        </article>
+        <article class="stat-card amber">
+          <span>Attendance</span>
+          <strong>92%</strong>
+        </article>
+        <article class="stat-card red">
+          <span>Current Tutor</span>
+          <strong><%= tutor ? tutor.name : 'Unassigned' %></strong>
+        </article>
+      </section>
+
+      <section class="panel-grid">
+        <div class="panel">
+          <div class="panel-header">
+            <h2>Academic Progress</h2>
+          </div>
+          <% if (progress && progress.length) { %>
+            <ul class="listing">
+              <% progress.forEach((entry) => { %>
+                <li><span><%= entry.subject %></span> <strong><%= entry.score %>%</strong></li>
+              <% }) %>
+            </ul>
+          <% } else { %>
+            <p>No progress records yet.</p>
+          <% } %>
+        </div>
+
+        <div class="panel">
+          <div class="panel-header">
+            <h2>Recent Grades</h2>
+          </div>
+          <% if (assessments && assessments.length) { %>
+            <ul class="listing">
+              <% assessments.forEach((assessment) => { %>
+                <li><span><%= assessment.assessment_name %></span> <strong><%= assessment.grade %></strong></li>
+              <% }) %>
+            </ul>
+          <% } else { %>
+            <p>No assessments available yet.</p>
+          <% } %>
+        </div>
+      </section>
+
+      <section class="panel-grid">
+        <div class="panel">
+          <div class="panel-header">
+            <h2>Homework</h2>
+          </div>
+          <% if (homework && homework.length) { %>
+            <ul class="listing">
+              <% homework.forEach((item) => { %>
+                <li><span><%= item.title %></span> <strong><%= item.status %></strong></li>
+              <% }) %>
+            </ul>
+          <% } else { %>
+            <p>No homework assigned.</p>
+          <% } %>
+        </div>
+
+        <div class="panel">
+          <div class="panel-header">
+            <h2>Messages</h2>
+          </div>
+          <% if (messages && messages.length) { %>
+            <ul class="listing">
+              <% messages.forEach((message) => { %>
+                <li><span><%= message.message %></span> <small><%= new Date(message.created_at).toLocaleString() %></small></li>
+              <% }) %>
+            </ul>
+          <% } else { %>
+            <p>No messages yet.</p>
+          <% } %>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= tutor.name %> | Vivian Sibanda Tutoring</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="container nav">
+      <div class="brand">
+        <div class="brand-mark">VS</div>
+        <div>
+          <strong>Vivian Sibanda</strong>
+          <small>Tutoring</small>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/tutors">Tutors</a>
+      </div>
+      <div class="nav-actions">
+        <a class="btn btn-primary" href="/booking/<%= tutor.id %>">Book</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="section">
+    <div class="container two-col">
+      <div class="portrait-card">
+        <img src="/images/profile-placeholder.svg" alt="Tutor profile photo" />
+      </div>
+      <div>
+        <p class="eyebrow">Tutor Profile</p>
+        <h1><%= tutor.name %></h1>
+        <span class="status-badge success">AVAILABLE</span>
+        <p><strong>Subjects:</strong> <%= tutor.subjects %></p>
+        <p><strong>Qualifications:</strong> <%= tutor.qualifications %></p>
+        <p><strong>Experience:</strong> <%= tutor.experience %></p>
+        <p><strong>Biography:</strong> <%= tutor.biography %></p>
+        <p><strong>Availability:</strong> <%= tutor.availability || 'available' %></p>
+        <a class="btn btn-primary" href="/booking/<%= tutor.id %>">Book this tutor</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

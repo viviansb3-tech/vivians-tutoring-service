@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | Vivian Sibanda Tutoring</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body class="auth-page">
+  <div class="auth-shell">
+    <div class="auth-card">
+      <div class="auth-header">
+        <div class="brand">
+          <div class="brand-mark">VS</div>
+          <div>
+            <strong>Vivian Sibanda</strong>
+            <small>Learning Portal</small>
+          </div>
+        </div>
+        <h1>Welcome back</h1>
+      </div>
+
+      <form id="loginForm" class="auth-form">
+        <div class="field-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="name@example.com" required />
+        </div>
+        <div class="field-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Enter your password" required />
+        </div>
+        <button class="btn btn-primary full-width" type="submit">Login</button>
+        <p class="auth-note">Demo accounts: student@example.com / tutor@example.com / viviansb3@gmail.com</p>
+        <p id="authMessage" class="form-message"></p>
+      </form>
+
+      <div class="auth-links">
+        <a href="/">Back to homepage</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/main.js"></script>
+  <script>
+    const loginForm = document.getElementById('loginForm');
+    const authMessage = document.getElementById('authMessage');
+    loginForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const payload = Object.fromEntries(new FormData(loginForm).entries());
+      try {
+        const response = await fetch('/api/auth/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const result = await response.json();
+        if (!response.ok) {
+          authMessage.textContent = result.error || 'Login failed.';
+          authMessage.className = 'form-message error';
+          return;
+        }
+        authMessage.textContent = 'Login successful. Redirecting...';
+        authMessage.className = 'form-message success';
+        setTimeout(() => window.location.href = result.redirect, 600);
+      } catch (error) {
+        authMessage.textContent = 'Unable to log in at the moment.';
+        authMessage.className = 'form-message error';
+      }
+    });
+  </script>
+</body>
+</html>

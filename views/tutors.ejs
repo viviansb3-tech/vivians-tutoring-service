@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Find a Tutor | Vivian Sibanda Tutoring</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="container nav">
+      <div class="brand">
+        <div class="brand-mark">VS</div>
+        <div>
+          <strong>Vivian Sibanda</strong>
+          <small>Tutoring</small>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/tutors">Tutors</a>
+        <a href="/contact">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <a class="btn btn-secondary" href="/login">Login</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Find a Tutor</p>
+        <h1>Browse our academic support team</h1>
+      </div>
+      <div class="card-grid three-col">
+        <% tutors.forEach((tutor) => { %>
+          <article class="tutor-card">
+            <div class="avatar avatar-medium"><%= tutor.name.split(' ').map(n => n[0]).slice(0,2).join('') %></div>
+            <h3><%= tutor.name %></h3>
+            <p><%= tutor.subjects || 'Mathematics & Science' %></p>
+            <span class="status-badge success">AVAILABLE</span>
+            <div class="card-actions">
+              <a class="btn btn-secondary" href="/tutors/<%= tutor.id %>">View profile</a>
+              <a class="btn btn-primary" href="/booking/<%= tutor.id %>">Book</a>
+            </div>
+          </article>
+        <% }) %>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard | Vivian Sibanda Tutoring</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <div class="dashboard-shell">
+    <aside class="sidebar">
+      <div class="brand sidebar-brand">
+        <div class="brand-mark">VS</div>
+        <div>
+          <strong>Vivian Sibanda</strong>
+          <small>Admin</small>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="/admin">Dashboard</a>
+        <a href="/admin">Tutors</a>
+        <a href="/admin">Students</a>
+        <a href="/admin">Bookings</a>
+        <a href="/admin">Reports</a>
+        <a href="/admin">Settings</a>
+        <a href="/logout">Logout</a>
+      </nav>
+    </aside>
+
+    <main class="dashboard-main">
+      <header class="dashboard-header">
+        <div>
+          <p class="eyebrow">Welcome back</p>
+          <h1>Vivian Sibanda</h1>
+        </div>
+        <a class="btn btn-primary" href="/">View website</a>
+      </header>
+
+      <section class="stats-grid">
+        <article class="stat-card blue">
+          <span>Total Students</span>
+          <strong><%= totalStudents || 0 %></strong>
+        </article>
+        <article class="stat-card green">
+          <span>Total Tutors</span>
+          <strong><%= totalTutors || 0 %></strong>
+        </article>
+        <article class="stat-card amber">
+          <span>Upcoming Bookings</span>
+          <strong><%= bookings ? bookings.length : 0 %></strong>
+        </article>
+        <article class="stat-card red">
+          <span>Average Performance</span>
+          <strong>72%</strong>
+        </article>
+      </section>
+
+      <section class="panel-grid">
+        <div class="panel">
+          <div class="panel-header">
+            <h2>Recent bookings</h2>
+          </div>
+          <ul class="listing">
+            <% if (bookings && bookings.length) { %>
+              <% bookings.forEach((booking) => { %>
+                <li><span><%= booking.subject %></span> <strong><%= booking.status %></strong></li>
+              <% }) %>
+            <% } else { %>
+              <li>No bookings available.</li>
+            <% } %>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <div class="panel-header">
+            <h2>Recent assessments</h2>
+          </div>
+          <ul class="listing">
+            <% if (assessments && assessments.length) { %>
+              <% assessments.forEach((assessment) => { %>
+                <li><span><%= assessment.assessment_name %></span> <strong><%= assessment.grade %></strong></li>
+              <% }) %>
+            <% } else { %>
+              <li>No assessment data.</li>
+            <% } %>
+          </ul>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <h2>Messages</h2>
+        </div>
+        <ul class="listing">
+          <% if (messages && messages.length) { %>
+            <% messages.forEach((message) => { %>
+              <li><span><%= message.message %></span> <small><%= new Date(message.created_at).toLocaleString() %></small></li>
+            <% }) %>
+          <% } else { %>
+            <li>No messages.</li>
+          <% } %>
+        </ul>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

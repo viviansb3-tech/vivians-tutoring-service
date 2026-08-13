@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vivian Sibanda Tutoring</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="container nav">
+      <div class="brand">
+        <div class="brand-mark">VS</div>
+        <div>
+          <strong>Vivian Sibanda</strong>
+          <small>Tutoring</small>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#programmes">Programmes</a>
+        <a href="#tutors">Tutors</a>
+        <a href="#booking">Book</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <a class="btn btn-secondary" href="/login">Student Login</a>
+        <a class="btn btn-primary" href="/login">Book a Tutor</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Learn. Improve. Achieve.</p>
+          <h1>Expert tutoring for confident learners.</h1>
+          <p class="lead">Vivian Sibanda Tutoring helps students build academic confidence, improve subject mastery, and achieve meaningful academic growth with expert support.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="/tutors">Book a Tutor</a>
+            <a class="btn btn-secondary" href="/login">Student Login</a>
+            <a class="btn btn-ghost" href="/login">Tutor Login</a>
+          </div>
+          <div class="hero-stats">
+            <div><strong>1:1</strong><span>Support</span></div>
+            <div><strong>8+</strong><span>Years</span></div>
+            <div><strong>90%</strong><span>Goal Achievement</span></div>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="profile-badge">
+            <div class="avatar avatar-large">VS</div>
+            <div>
+              <h3>Vivian Sibanda</h3>
+              <p>Academic Coach & Tutor</p>
+            </div>
+          </div>
+          <ul class="feature-list">
+            <li>Mathematics</li>
+            <li>Statistics</li>
+            <li>Physical Science</li>
+            <li>Biology</li>
+          </ul>
+          <a class="btn btn-primary w-full" href="/tutors">View Tutoring Options</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container two-col">
+        <div class="profile-spotlight">
+          <div class="portrait-card">
+            <img src="/images/profile-placeholder.svg" alt="Vivian Sibanda profile portrait" />
+          </div>
+        </div>
+        <div>
+          <p class="eyebrow">About Vivian</p>
+          <h2>Helping students grow with clarity and confidence.</h2>
+          <p>Vivian Sibanda is a dedicated tutor and academic mentor focused on creating a supportive, structured learning environment for students across multiple grades and subjects.</p>
+          <p>With a strong commitment to personalised instruction, Vivian blends academic rigour with practical support so learners can strengthen fundamentals, improve assessments, and feel more confident in real classroom settings.</p>
+          <div class="meta-grid">
+            <div>
+              <strong>Qualifications</strong>
+              <span>B.Ed. / Academic Coaching / Subject Tutoring</span>
+            </div>
+            <div>
+              <strong>Subjects</strong>
+              <span>Mathematics, Statistics, Science</span>
+            </div>
+            <div>
+              <strong>Experience</strong>
+              <span>8+ years of tutoring and mentoring</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="programmes" class="section section-alt">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Programmes</p>
+          <h2>Tailored learning support</h2>
+        </div>
+        <div class="card-grid three-col">
+          <article class="info-card">
+            <h3>Academic Coaching</h3>
+            <p>Structured support for learners who want consistent improvement and stronger subject understanding.</p>
+          </article>
+          <article class="info-card">
+            <h3>Exam Preparation</h3>
+            <p>Focused revision plans, practice questions, and confidence-building strategies for term tests and exams.</p>
+          </article>
+          <article class="info-card">
+            <h3>Skills Development</h3>
+            <p>Support with study methods, time management, concept retention, and subject-specific problem solving.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="tutors" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Our Tutors</p>
+          <h2>Experienced, supportive educators</h2>
+        </div>
+        <div class="card-grid three-col">
+          <% tutors.forEach((tutor) => { %>
+            <article class="tutor-card">
+              <div class="avatar avatar-medium"><%= tutor.name.split(' ').map(n => n[0]).slice(0,2).join('') %></div>
+              <h3><%= tutor.name %></h3>
+              <p><%= tutor.subjects || 'Mathematics & Science' %></p>
+              <span class="status-badge success">AVAILABLE</span>
+              <div class="card-actions">
+                <a class="btn btn-secondary" href="/tutors/<%= tutor.id %>">View Profile</a>
+                <a class="btn btn-primary" href="/booking/<%= tutor.id %>">Book</a>
+              </div>
+            </article>
+          <% }) %>
+        </div>
+      </div>
+    </section>
+
+    <section id="booking" class="section section-alt">
+      <div class="container booking-banner">
+        <div>
+          <p class="eyebrow">Book a Session</p>
+          <h2>Start your learning journey today.</h2>
+        </div>
+        <a class="btn btn-primary" href="/tutors">Find a Tutor</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Testimonials</p>
+          <h2>Parents and students trust the support.</h2>
+        </div>
+        <div class="card-grid three-col">
+          <blockquote class="quote-card">
+            “My daughter’s confidence in mathematics improved dramatically after only a few sessions.”
+            <footer>— Parent</footer>
+          </blockquote>
+          <blockquote class="quote-card">
+            “The lessons were clear, encouraging, and always relevant to what we were studying.”
+            <footer>— Student</footer>
+          </blockquote>
+          <blockquote class="quote-card">
+            “The tutor understood my goals and adjusted the work to match my progress.”
+            <footer>— Student</footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container faq-grid">
+        <div>
+          <p class="eyebrow">FAQ</p>
+          <h2>Common questions</h2>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <h3>Do you offer subject-specific tutoring?</h3>
+            <p>Yes, lessons cover core academic subjects including mathematics, statistics, biology, and physical science.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Can I book a first session online?</h3>
+            <p>Yes. Students can browse tutor profiles and request a lesson directly through the booking flow.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Do you provide progress tracking?</h3>
+            <p>Yes, students and tutors can review academic progress, assessments, and improvements over time.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact" class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Vivian Sibanda Tutoring</h3>
+        <p>Professional academic support for confident growth.</p>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#programmes">Programmes</a></li>
+          <li><a href="/tutors">Tutors</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:viviansb3@gmail.com">viviansb3@gmail.com</a></li>
+          <li><a href="/login">Student Login</a></li>
+          <li><a href="/login">Tutor Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
